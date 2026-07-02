@@ -1,4 +1,4 @@
-from entities.produto import Produto
+from aula01.entities.produto import Produto
 
 
 class ProdutoService:

@@ -2,12 +2,12 @@ import os
 import re
 import argparse
 from dotenv import load_dotenv
-from agents.agent import Agent
-from services.produto_service import ProdutoService
-from agents.gemini_react_agent import GeminiReactAgent
-from agents.lmstudio_react_agent import LMStudioReactAgent
-from agents.react_agent import ReactAgent
-from services.gemini_service import GeminiService
+from aula01.agents.agent import Agent
+from aula01.services.produto_service import ProdutoService
+from aula01.agents.gemini_react_agent import GeminiReactAgent
+from aula01.agents.lmstudio_react_agent import LMStudioReactAgent
+from aula01.agents.react_agent import ReactAgent
+from aula01.services.gemini_service import GeminiService
 
 load_dotenv()
 
