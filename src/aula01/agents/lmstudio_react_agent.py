@@ -1,5 +1,5 @@
 from openai import OpenAI
-from aula01.agents.react_agent import ReactAgent
+from agents.react_agent import ReactAgent
 
 class LMStudioReactAgent(ReactAgent):
     def __init__(self, system_prompt: str, llm_model: str = "local-model", base_url: str = "http://127.0.0.1:1234/v1"):

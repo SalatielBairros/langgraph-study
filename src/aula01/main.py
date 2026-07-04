@@ -1,13 +1,11 @@
 import os
-import re
 import argparse
 from dotenv import load_dotenv
-from aula01.agents.agent import Agent
-from aula01.services.produto_service import ProdutoService
-from aula01.agents.gemini_react_agent import GeminiReactAgent
-from aula01.agents.lmstudio_react_agent import LMStudioReactAgent
-from aula01.agents.react_agent import ReactAgent
-from aula01.services.gemini_service import GeminiService
+from services.produto_service import ProdutoService
+from agents.gemini_react_agent import GeminiReactAgent
+from agents.lmstudio_react_agent import LMStudioReactAgent
+from agents.react_agent import ReactAgent
+from services.gemini_service import GeminiService
 
 load_dotenv()
 
@@ -114,6 +112,7 @@ def interactive_chat(react_agent: ReactAgent):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Executa o Agente ReAct utilizando diferentes provedores.")
+    it = True
     parser.add_argument(
         "--mode", 
         type=str, 
@@ -133,6 +132,7 @@ if __name__ == "__main__":
     if args.mode == "modelos_gemini":
         gemini_service = GeminiService()
         gemini_service.get_avaliable_chat_models()
+        it = False
     
     elif args.mode == "gemini":
         agent = GeminiReactAgent(
@@ -149,7 +149,7 @@ if __name__ == "__main__":
 
     if args.benchmark:
         run_benchmark(agent, args.mode)
-    else:
+    elif it:
         print(f"Executando o chat interativo com o provedor: {args.mode}")
         interactive_chat(agent)
     

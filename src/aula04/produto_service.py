@@ -1,4 +1,4 @@
-from entities.produto import Produto
+from produto import Produto
 
 
 class ProdutoService:
@@ -14,9 +14,8 @@ class ProdutoService:
 
     def consultar_estoque(self, item: str) -> str:
         """
-        Simula a consulta de estoque de um item no inventário.
+        Consulta de estoque de um item no inventário.
         """
-        print(f"Consultando estoque para o item: {item}")
         item = item.lower()
 
         for produto in self.produtos:
@@ -26,7 +25,7 @@ class ProdutoService:
 
     def consultar_preco_produto(self, produto: str) -> str:
         """
-        Simula a consulta do preço unitário de um produto.
+        Consulta do preço unitário de um produto.
         """
         produto = produto.lower()
         
@@ -51,3 +50,9 @@ class ProdutoService:
             for produto in self.produtos[:max_items]
         ]
         return produtos_info
+    
+    def secret_discount(self, preco: float) -> float:
+        """
+        Método que aplica o desconto secreto, que só pode ser feito mediante aprovação.
+        """
+        return preco * 0.75

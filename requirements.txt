@@ -9,3 +9,6 @@ langchain-classic
 python-dotenv
 google-genai
 openai
+langchain-tavily
+langgraph-checkpoint-sqlite
+langchain-openai
